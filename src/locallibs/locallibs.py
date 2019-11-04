@@ -23,6 +23,7 @@ def add_locallibs(base_dir):
     dotlocallibs = _DotLocalLibs(config_file_path)
     lib_base_paths = list(dotlocallibs.get_base_paths())
     lib_base_paths.reverse()
+    sys.path.insert(os.path.join(base_dir, '_locallibs'))
     for include_path in lib_base_paths:
         sys.path.insert(0, include_path)
 
