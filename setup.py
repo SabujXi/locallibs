@@ -18,7 +18,7 @@ setup(
             'locallibs = locallibs:locallibs_cli'
         ]
     },
-    data_files=[('', ['README.rst', 'LICENSE'])],
+    data_files=[('', ['README.rst'])],
     package_data={
         '': ['*.txt', '*.rst', '*.md'],
     },

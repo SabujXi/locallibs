@@ -1,6 +1,7 @@
 __all__ = [
     'add_locallibs',
-    'collect_locallibs'
+    'collect_locallibs',
+    'locallibs_cli'
 ]
 
 import sys
@@ -52,9 +53,18 @@ def collect_locallibs(base_dir):
             shutil.rmtree(_full_path)
 
     for lib_base_path in lib_base_paths:
+        print("Copying: " + lib_base_path)
         shutil.copytree(lib_base_path, collect_dir)
 
-    raise NotImplemented
+
+def locallibs_cli():
+    args = sys.argv[1:]
+    if not args:
+        print("No command provided. Supported commands: collect")
+    if args[0] == 'collect':
+        collect_locallibs(os.getcwd())
+    else:
+        print("Invalid command. Supported commands: collect")
 
 
 class _DotLocalLibs:
