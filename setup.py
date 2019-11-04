@@ -6,7 +6,7 @@ with open('README.rst', 'r', encoding='utf-8') as f:
 
 setup(
     name='locallibs',
-    version='0.1.0.dev1',
+    version='0.1.0.dev2',
     description='Local Library Management Tool',
     author='Md. Sabuj Sarker',
     author_email='md.sabuj.sarker@gmail.com',
