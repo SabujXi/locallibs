@@ -1,12 +1,17 @@
 import os
 import shutil
-
+from locallibs import consts
+from locallibs.path import get_abs_path
 from locallibs.dotlocallibs import DotLocalLibs
 
 
 def collect_locallibs(base_dir):
-    if not os.path.isabs(base_dir):
-        base_dir = os.path.abspath(base_dir)
+    """
+    Copy all the local libraries specified in the base_dir/.locallibs config & in ~/.locallibs into the cwd/_locallibs
+    :param base_dir:
+    :return:
+    """
+    base_dir = get_abs_path(base_dir)
 
     config_file_path = os.path.join(base_dir, '.locallibs')
     if not os.path.exists(config_file_path):
